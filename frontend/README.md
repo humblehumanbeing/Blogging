@@ -2,21 +2,19 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
 
-## Development server
+## Cloning and node
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+`git clone https://github.com/humblehumanbeing/Blogging.git`
 
-## Code scaffolding
+Run `npm install` to install in blogging\backend and blogging\frontend
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## DB
 
-## Build
+You need to have MongoDB
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Running
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npm start` for frontend, `node app.js` for backend and `mongod` for db server and navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Running end-to-end tests
 
