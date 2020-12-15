@@ -20,7 +20,8 @@ declare module "@angular/core" {
   declarations: [
   	RootComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    ShowPostComponent
   ],
   imports: [
     BrowserModule,
