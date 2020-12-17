@@ -14,8 +14,8 @@ export class ShowPostComponent implements OnInit {
   public posts : any [];
 
   constructor(private showPostService: ShowPostService, private commonService: CommonService) {
-       
-  }
+ 
+    }
 
   ngOnInit(){
   	this.getAllPost();
@@ -27,11 +27,11 @@ export class ShowPostComponent implements OnInit {
 
 
 
-  getAllPost(){
+    getAllPost(){
   	this.showPostService.getAllPost().subscribe(result => {
   		console.log('result is ', result);
   		this.posts = result['data'];
   	});
-  }
+    }
 
 }
