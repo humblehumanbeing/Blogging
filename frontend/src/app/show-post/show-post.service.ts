@@ -7,5 +7,9 @@ export class ShowPostService {
     constructor(private http: HttpClient){
  
     }
+
+    getAllPost(){
+        return this.http.post('/api/post/getAllPost',{})
+    }
  
 }
