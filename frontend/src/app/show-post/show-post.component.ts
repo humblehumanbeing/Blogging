@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ShowPostService } from './show-post.service';
 import { Post } from '../models/post.model';
-import { CommonService } from '../service/common.service';
+import { CommonService, } from '../service/common.service';
 
 @Component({
   selector: 'app-show-post',
@@ -11,9 +11,10 @@ import { CommonService } from '../service/common.service';
 })
 export class ShowPostComponent implements OnInit {
 
-  @ViewChild('closeBtn') closeBtn: ElementRef;
+  @ViewChild('closeBtn')
+  closeBtn!: ElementRef;
 
-  public posts : any [];
+  public posts!: [];
   public post_to_delete;
 
   constructor(private showPostService: ShowPostService, private commonService: CommonService) {
