@@ -20,13 +20,12 @@ export class LoginComponent {
   validateLogin() {
   	if(this.user.username && this.user.password) {
   		this.loginService.validateLogin(this.user).subscribe(result => {
-        console.log('result is ', result);
         if(result['status'] === 'success') {
+          localStorage.setItem('loggedInUser', this.user.username);
           this.router.navigate(['/home']);
         } else {
           alert('Wrong username password');
         }
-        
       }, error => {
         console.log('error is ', error);
       });
