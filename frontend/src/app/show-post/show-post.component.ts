@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ShowPostService } from './show-post.service';
 import { Post } from '../models/post.model';
 import { CommonService } from '../service/common.service';
@@ -33,5 +33,10 @@ export class ShowPostComponent implements OnInit {
   		this.posts = result['data'];
   	});
     }
+
+  editPost(post: Post){
+    this.commonService.setPostToEdit(post);
+    console.log('post is ',post);
+  }
 
 }
