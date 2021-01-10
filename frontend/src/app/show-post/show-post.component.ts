@@ -11,7 +11,10 @@ import { CommonService } from '../service/common.service';
 })
 export class ShowPostComponent implements OnInit {
 
+  @ViewChild('closeBtn') closeBtn: ElementRef;
+
   public posts : any [];
+  public post_to_delete;
 
   constructor(private showPostService: ShowPostService, private commonService: CommonService) {
  
@@ -25,7 +28,13 @@ export class ShowPostComponent implements OnInit {
     });
   }
 
+  setDelete(post: Post){
+    this.post_to_delete = post;
+  }
 
+  unsetDelete(){
+    this.post_to_delete = null;
+  }
 
     getAllPost(){
   	this.showPostService.getAllPost().subscribe(result => {
@@ -36,7 +45,13 @@ export class ShowPostComponent implements OnInit {
 
   editPost(post: Post){
     this.commonService.setPostToEdit(post);
-    console.log('post is ',post);
+  }
+
+  deletePost(){
+    this.showPostService.deletePost(this.post_to_delete._id).subscribe(res => {
+      this.getAllPost();
+      this.closeBtn.nativeElement.click();
+    })
   }
 
 }
