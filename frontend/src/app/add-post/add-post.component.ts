@@ -19,6 +19,13 @@ export class AddPostComponent {
       this.post = new Post();
   }
 
+  ngOnInit(){
+    this.commonService.postEdit_Observable.subscribe(res => {
+      this.post = this.commonService.post_to_be_edited;
+      console.log('post is ', this.post._id);
+    });
+  }
+
   addPost() {
     if(this.post.title && this.post.description){
         this.addPostService.addPost(this.post).subscribe(res =>{
