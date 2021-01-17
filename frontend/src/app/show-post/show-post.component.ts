@@ -11,10 +11,10 @@ import { CommonService, } from '../service/common.service';
 })
 export class ShowPostComponent implements OnInit {
 
-  @ViewChild('closeBtn')
-  closeBtn!: ElementRef;
+  @ViewChild('closeBtn') 
+  closeBtn: ElementRef;
 
-  public posts!: [];
+  public posts : any [];
   public post_to_delete;
 
   constructor(private showPostService: ShowPostService, private commonService: CommonService) {

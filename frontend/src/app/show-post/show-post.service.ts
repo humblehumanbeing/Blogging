@@ -13,7 +13,7 @@ export class ShowPostService {
         return this.http.post('/api/post/getAllPost',{})
     }
 
-	deletePost(id){
+	deletePost(id: any){
 		return this.http.post('/api/post/deletePost',{id : id})
 	}
 
